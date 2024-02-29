@@ -4,6 +4,8 @@ const { connection } = require("./database/connection");
 const express = require("express");
 const cors = require("cors");
 const puerto = 8080;
+//Para cargar las rutas
+const userRoutes = require("./routes/user");
 
 //Conexión a base de datos
 console.log("Starting node application");
@@ -20,6 +22,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 //Cargar configuración de rutas
+app.use("/api", userRoutes);
 
 //Poner servidor a escuchar peticiones http
 app.listen(puerto, () => {
