@@ -22,7 +22,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 //Cargar configuración de rutas
-app.use("/api", userRoutes);
+app.use("/users", userRoutes);
 
 //Poner servidor a escuchar peticiones http
 app.listen(puerto, () => {
